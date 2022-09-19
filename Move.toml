@@ -3,7 +3,8 @@ name = "move_test"
 version = "0.0.1"
 
 [dependencies]
-MoveStdlib = { git = "https://github.com/move-language/move.git", subdir = "language/move-stdlib", rev = "main" }
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet" }
 
 [addresses]
-std =  "0x1"
+move_test =  "0x0"
+sui = "0x2"
