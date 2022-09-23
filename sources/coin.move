@@ -11,4 +11,8 @@ module moveTest::coin {
             tx_context::sender(ctx)
         )
     }
+    
+    public fun value(self: &COIN): u64 {
+        return self.value;
+    }
 }
