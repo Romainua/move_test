@@ -4,7 +4,7 @@ module moveTest::coin {
     use sui::transfer;
     use sui::tx_context::{Self, TxContext};
 
-    struct Coin has key, store {
+    struct Coin has key, store, drop {
         id: UID,
         value: u64
     }
@@ -20,7 +20,7 @@ module moveTest::coin {
     transfer::transfer(c,recipient)
     }
     
-    public fun value(self: &COIN): u64 {
+    public fun value(self: &Coin): u64 {
         self.value
     }
 }
