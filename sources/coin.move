@@ -3,20 +3,12 @@ module moveTest::coin {
     use sui::transfer;
     use sui::tx_context::{Self, TxContext};
 
-    struct Coin has drop {}
+    struct COIN has drop {}
 
-    fun init(wit: Coin, ctx: &mut TxContext) {
+    fun init(wit: COIN, ctx: &mut TxContext) {
         transfer::transfer(
-            coin::create_currency(wit, ctx),
+            coin::create_currency(wit, 6,  ctx),
             tx_context::sender(ctx)
         )
     }
-
-    // public entry fun transfer(c: Coin, recipient: address, _ctx: &mut TxContext) {
-    // transfer::transfer(c,recipient)
-    // }
-    
-    // public fun value(self: &Coin): u64 {
-    //     self.value
-    // }
 }
